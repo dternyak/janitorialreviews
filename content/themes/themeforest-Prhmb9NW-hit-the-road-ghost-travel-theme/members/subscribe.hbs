@@ -1,0 +1,66 @@
+{{!< ../default}}
+
+{{> header header-page=true header-center=true title=(t "Choose your subscription")}}
+
+<main class="container hide-on-menu">
+  <div class="page-content page-full-width">
+    {{#if @member.paid}}
+      <div class="text-center">{{t "Redirecting..."}}</div>
+      <script>window.location = '{{@site.url}}/account/';</script>
+    {{else}}
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+          <p class="text-center">
+            {{t "Unlock full access to"}} {{@site.title}}
+            {{t "and see the entire library of subscribers only content & updates"}}
+          </p>
+        </div>
+      </div>
+      <div class="row membership-plans">
+        {{#unless @member}}
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-subtitle text-center">{{t "Free"}}</div>
+                <div class="card-title text-center"><sup>$</sup>0</div>
+                {{> subscriptions/free }}
+                <div class="text-center">
+                  <a href="{{@site.url}}/sign-up" class="btn btn-primary">{{t "Subscribe Now"}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/unless}}
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 {{#if @member}}col-lg-offset-2{{/if}}">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-subtitle text-center">{{t "Monthly"}}</div>
+              <div class="card-title text-center"><sup>$</sup>{{@price.monthly}}</div>
+              {{> subscriptions/monthly }}
+              <div class="text-center">
+                <button class="btn btn-primary" role="link" data-members-plan="Monthly">{{t "Subscribe Now"}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-subtitle text-center">{{t "Yearly"}}</div>
+              <div class="card-title text-center"><sup>$</sup>{{@price.yearly}}</div>
+              {{> subscriptions/yearly }}
+              <div class="text-center">
+                <button class="btn btn-primary" role="link" data-members-plan="Yearly">{{t "Subscribe Now"}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{#unless @member}}
+        <div class="small text-center text-muted mt-1">
+          {{t "Already have an account?"}} <a href="{{@site.url}}/sign-in">{{t "Sign in"}}</a>
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</main>

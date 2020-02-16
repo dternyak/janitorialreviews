@@ -1,0 +1,12 @@
+.alert:empty {
+	display: none;
+}
+
+.alert-center {
+	display: inline-block;
+  text-align: center;
+}
+
+.alert-mb {
+	margin-bottom: $line-height-computed;
+}

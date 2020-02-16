@@ -1,0 +1,51 @@
+.mt-0 {
+	margin-top: 0;
+}
+
+.mt-1 {
+	margin-top: $line-height-computed * 0.5;
+}
+
+.mt-2 {
+	margin-top: $line-height-computed * 1;
+}
+
+.mt-3 {
+	margin-top: $line-height-computed * 1.5;
+}
+
+.mt-4 {
+	margin-top: $line-height-computed * 2;
+}
+
+.mt-5 {
+	margin-top: $line-height-computed * 2.5;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.mb-1 {
+	margin-bottom: $line-height-computed * 0.5;
+}
+
+.mb-2 {
+	margin-bottom: $line-height-computed * 1;
+}
+
+.mb-3 {
+	margin-bottom: $line-height-computed * 1.5;
+}
+
+.mb-4 {
+	margin-bottom: $line-height-computed * 2;
+}
+
+.mb-5 {
+	margin-bottom: $line-height-computed * 2.5;
+}
+
+.float-none {
+  float: none;
+}

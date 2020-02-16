@@ -1,0 +1,44 @@
+{{!< ../default}}
+
+{{> header header-page=true header-center=true title=(t "Sign Up")}}
+
+<main class="container hide-on-menu">
+  <div class="page-content page-full-width">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-7 center-block float-none">
+        {{#if @member}}
+          <div class="text-center">{{t "Redirecting..."}}</div>
+          <script>window.location = '{{@site.url}}';</script>
+        {{else}}
+          <p class="text-center">
+            {{@site.description}}
+          </p>
+
+          <form class="sign-up-form" data-members-form="signup">
+            <div class="text-center">
+              <div class="alert alert-danger alert-center mb-2 message-error" data-members-error></div>
+              <div class="alert alert-success alert-center mb-2 message-success">
+                {{t "Check your inbox and click the link to sign in into your account."}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 center-block float-none">
+                <div class="form-group">
+                  <label>{{t "Email"}}:</label>
+                  <input class="form-control" data-members-email type="email" required="true" />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="button btn btn-primary"><i
+                      class="fa fa-circle-o-notch fa-spin hidden"></i>{{t "Sign Up"}}</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="small text-center text-muted mt-2">
+            {{t "Already have an account?"}} <a href="{{@site.url}}/sign-in">{{t "Sign In"}}</a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</main>

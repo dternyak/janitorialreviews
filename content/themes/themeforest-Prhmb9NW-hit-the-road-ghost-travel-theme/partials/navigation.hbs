@@ -1,0 +1,39 @@
+<ul class="nav navbar-nav clearfix">
+  {{#foreach navigation}}
+    <li><a href="{{url absolute="true"}}" class="{{#if current}}active{{/if}}">{{label}}</a></li>
+  {{/foreach}}
+  {{#if @member}}
+    <li class="dropdown">
+      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 7px;"><i
+          class="fa fa-user"></i><span class="hidden-md hidden-lg">&nbsp;&nbsp;{{t "Member"}}</span></a>
+      <ul class="dropdown-menu dropdown-menu-width-auto">
+        <li><a href="{{@site.url}}/account">{{t "Account"}}</a></li>
+        <li><a href="#" data-members-signout>{{t "Sign Out"}}</a></li>
+      </ul>
+    </li>
+  {{else}}
+    <li><a href="{{@site.url}}/subscribe/">{{t "Subscribe"}}</a></li>
+    <li><a href="{{@site.url}}/sign-in/">{{t "Sign In"}}</a></li>
+  {{/if}}
+  <li class="search hidden-xs hidden-sm">
+    <form class="form" id="header-search-form" method="get" action="{{@site.url}}/search/">
+      <div class="input-group nav-search">
+        <div class="input-wrap">
+          <input class="form-control" id="header-search-input" type="text" name="q" placeholder="{{t "Search"}}" />
+        </div>
+        <button class="btn btn-input inactive" type="button" id="header-search-button"><i
+            class="fa fa-search"></i></button>
+      </div>
+    </form>
+  </li>
+  <li class="search visible-xs visible-sm">
+    <form class="form form-search-hamburger" method="get" action="{{@site.url}}/search/">
+      <div class="input-group">
+        <input id="sidebar-search-field" class="form-control" type="text" name="q" placeholder="{{t "Search"}}" />
+        <div class="input-group-btn">
+          <button class="btn btn-input" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </li>
+</ul>

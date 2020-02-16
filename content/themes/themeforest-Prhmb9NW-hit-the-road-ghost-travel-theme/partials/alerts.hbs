@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="alert alert-success alert-dismissible alert-subscribe hidden">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+        aria-hidden="true">&times;</span></button>
+    {{t "You've successfully subscribed to"}} {{@site.title}}
+  </div>
+
+  <div class="alert alert-success alert-dismissible alert-signup hidden">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+        aria-hidden="true">&times;</span></button>
+    <strong>{{t "Great!"}}</strong>
+    {{#if @member}}
+      {{t "Your account is fully activated, you now have access to all content."}}
+    {{else}}
+      {{t "Next, complete checkout for full access to"}} {{@site.title}}
+    {{/if}}
+  </div>
+
+  <div class="alert alert-success alert-dismissible alert-signin hidden">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+        aria-hidden="true">&times;</span></button>
+    <strong>{{t "Welcome back!"}}</strong>
+    {{t "You've successfully signed in"}}
+  </div>
+
+  <div class="alert alert-success alert-dismissible alert-checkout hidden">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+        aria-hidden="true">&times;</span></button>
+    <strong>{{t "Success!"}}</strong>
+    {{#if @member}}
+      {{t "Your account is fully activated, you now have access to all content."}}
+    {{else}}
+      {{t "Check your inbox and click the link to sign in into your account."}}
+    {{/if}}
+  </div>
+</div>

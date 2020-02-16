@@ -1,0 +1,62 @@
+.form-control {
+	&.form-control-dark {
+		background-color: darken($footer-color, 3%);
+		border: none;
+		color: white;
+	}
+
+	&.form-control-search {
+		height: 30px;
+		margin-top: 20px;
+	}
+}
+
+form {
+}
+
+form.loading {
+	input {
+		pointer-events: none;
+	}
+	button[type='submit'] {
+		pointer-events: none;
+		.fa {
+			display: inline-block !important;
+		}
+	}
+}
+
+.subscribe-form, 
+.sign-in-form,
+.sign-up-form {
+  .message-success {
+    display: none;
+    color: $state-success-text;
+  }
+  .message-error {
+    display: none;
+    color: $state-danger-text;
+  }
+
+  &.success .message-success,
+  &.error .message-error {
+    display: inline-block;
+  }
+
+  &.loading {
+    input, button {
+      pointer-events: none; 
+    }
+
+    button[type='submit'] {
+      .fa {
+        margin-right: $line-height-computed / 4;
+        display: inline-block !important;
+      }
+    }
+
+    input {
+      opacity: 0.6;
+    }
+  }
+}
