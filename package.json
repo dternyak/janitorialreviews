@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/joshternyak/janitorialreviews.github.io#readme",
   "dependencies": {
-    "ghost-static": "^0.3.3"
+    "ghost-static": "^0.3.3",
+    "knex": "^0.20.10",
+    "knex-migrator": "^3.4.1"
   },
   "devDependencies": {}
 }
